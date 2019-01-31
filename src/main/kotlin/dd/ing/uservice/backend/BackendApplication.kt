@@ -1,11 +1,13 @@
 package dd.ing.uservice.backend
 
+import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
-import org.springframework.boot.runApplication
+
 
 @SpringBootApplication
 class BackendApplication
 
 fun main(args: Array<String>) {
-    runApplication<BackendApplication>(*args)
+    // runApplication<BackendApplication>(*args)
+    SpringApplication.run(BackendApplication::class.java, *args)
 }
