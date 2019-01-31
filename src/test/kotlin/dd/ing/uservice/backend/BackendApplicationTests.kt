@@ -1,4 +1,4 @@
-package dd.ing.user.backend
+package dd.ing.uservice.backend
 
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -9,9 +9,10 @@ import org.springframework.test.context.junit4.SpringRunner
 @SpringBootTest
 class BackendApplicationTests {
 
-	@Test
-	fun contextLoads() {
-	}
+    @Test
+    fun contextLoads() {
+        println("great")
+    }
 
 }
 

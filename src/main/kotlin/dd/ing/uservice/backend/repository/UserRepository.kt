@@ -1,6 +1,7 @@
-package dd.ing.user.backend.repository
 
-import dd.ing.user.backend.data.Person
+package dd.ing.uservice.backend.repository
+
+import dd.ing.uservice.backend.data.Person
 
 import org.springframework.data.mongodb.repository.MongoRepository
 import org.springframework.stereotype.Repository

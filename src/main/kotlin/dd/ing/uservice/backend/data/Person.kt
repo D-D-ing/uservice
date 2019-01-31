@@ -1,4 +1,4 @@
-package dd.ing.user.backend.data
+package dd.ing.uservice.backend.data
 
 import org.springframework.data.mongodb.core.mapping.Document
 import java.util.*
