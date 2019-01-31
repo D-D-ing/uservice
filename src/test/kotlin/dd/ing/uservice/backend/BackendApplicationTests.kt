@@ -13,6 +13,4 @@ class BackendApplicationTests {
     fun contextLoads() {
         println("great")
     }
-
 }
-

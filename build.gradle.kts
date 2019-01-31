@@ -5,6 +5,9 @@ plugins {
     id("org.jetbrains.kotlin.plugin.spring") version "1.3.20"
     id("org.springframework.boot") version "2.1.2.RELEASE"
     id("io.spring.dependency-management") version "1.0.6.RELEASE"
+
+    id("org.jlleitschuh.gradle.ktlint") version "7.0.0"
+    id("org.jlleitschuh.gradle.ktlint-idea") version "7.0.0"
 }
 
 group = "dding.uservice"
@@ -12,6 +15,7 @@ version = "1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
+    jcenter()
 }
 
 dependencies {
