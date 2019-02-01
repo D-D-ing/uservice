@@ -1,0 +1,10 @@
+type Query {
+  # The API Version
+  version: String!
+
+  # Get user with ID
+  user(id: ID!): User
+
+  # Get user by name
+  userByName(name: String!): [User]
+}
