@@ -1,0 +1,4 @@
+input AuthDataInput {
+  email: String!
+  password: String!
+}

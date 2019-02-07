@@ -7,4 +7,7 @@ type Query {
 
   # Get user by name
   userByName(name: String!): [User]
+
+  # Get user by email
+  userByEmail(email:String!): User
 }
