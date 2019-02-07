@@ -13,4 +13,7 @@ class UserQueryResolver(
 
     fun userByName(name: String) =
         userDao.getUserByName(name)
+
+    fun userByEmail(email: String) =
+            userDao.getUserByEmail(email)
 }
