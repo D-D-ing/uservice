@@ -3,7 +3,6 @@ package dd.ing.uservice.backend
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
 
-
 @SpringBootApplication
 class BackendApplication
 

@@ -1,11 +1,12 @@
 package dd.ing.uservice.backend.dao
 
-import dd.ing.uservice.backend.data.AuthData
+import dd.ing.uservice.backend.data.User
+import dd.ing.uservice.backend.graphql.input.AuthDataInput
 import dd.ing.uservice.backend.repository.UserRepository
 import org.springframework.stereotype.Component
 
 @Component
-class  UserDao(
+class UserDao(
     private val userRepository: UserRepository
 ) {
     fun getUserById(id: String) = userRepository.findById(id)
@@ -14,5 +15,15 @@ class  UserDao(
 
     fun getUserByEmail(email: String) = userRepository.findByEmailLike(email)
 
-    fun registerUser(name: String, authData: AuthData) = userRepository.registerUser(name, authData)
+    fun registerUser(name: String, authData: AuthDataInput): User {
+        return User(name = name, email = authData.email, password = authData.password)
+    }
+
+    fun loginUser(input: AuthDataInput): User {
+        return getUserByEmail(input.email)
+    }
+
+    fun logoutUser(email: String): Boolean {
+        return true
+    }
 }
