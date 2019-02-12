@@ -1,6 +1,6 @@
 type Mutation {
       #The new mutation
-      registerUser(name: String!, authProvider: AuthDataInput!): User!
-      loginUser(authProvider: AuthDataInput!): User!
+      registerUser(name: String!, authProvider: AuthDataInput!): User
+      loginUser(authProvider: AuthDataInput!): User
       logoutUser(email: String!): Boolean!
     }
