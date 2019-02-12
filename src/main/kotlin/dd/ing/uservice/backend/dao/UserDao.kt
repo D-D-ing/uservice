@@ -3,15 +3,21 @@ package dd.ing.uservice.backend.dao
 import dd.ing.uservice.backend.data.User
 import dd.ing.uservice.backend.graphql.input.AuthDataInput
 import dd.ing.uservice.backend.repository.UserRepository
+import io.jsonwebtoken.Jwts
+import io.jsonwebtoken.SignatureAlgorithm
+import io.jsonwebtoken.security.Keys
 import org.springframework.dao.EmptyResultDataAccessException
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
 import org.springframework.stereotype.Component
-import java.lang.Exception
+import java.security.Key
+
 
 @Component
 class UserDao(
     private val userRepository: UserRepository
 ) {
+    var key: Key = Keys.secretKeyFor(SignatureAlgorithm.HS256)
+
     fun getUserById(id: String) = userRepository.findById(id)
 
     fun getUserByName(name: String) = userRepository.findByNameLike(name)
@@ -38,6 +44,8 @@ class UserDao(
             if (!user.credentialsNonExpired) throw Exception("The credentials for the user ${input.email} are expired")
 
             if (BCryptPasswordEncoder().matches(input.password, user.password)) {
+                print(key)
+                user.token = Jwts.builder().setSubject("Joe").signWith(key).compact()
                 return user
             } else {
                 throw Exception("The password provided is wrong.")

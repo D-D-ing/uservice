@@ -10,10 +10,10 @@ data class User(
     @Id
     val id: String = UUID.randomUUID().toString(),
     val name: String,
-    @Indexed(unique=true)
+    @Indexed(unique = true)
     val email: String,
     val password: String,
-    val token: String? = null,
+    var token: String? = null,
     var version: Int = 0,
     var accountNonExpired: Boolean = true,
     var accountNonLocked: Boolean = true,

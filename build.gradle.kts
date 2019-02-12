@@ -35,6 +35,10 @@ dependencies {
     implementation("com.graphql-java:graphql-spring-boot-starter:4.0.0")
     implementation("com.graphql-java:graphql-java-servlet:5.0.0")
 
+    compile("io.jsonwebtoken:jjwt-api:0.10.5")
+    runtime("io.jsonwebtoken:jjwt-impl:0.10.5")
+    runtime("io.jsonwebtoken:jjwt-jackson:0.10.5")
+
     testImplementation("org.springframework.boot:spring-boot-starter-test:2.1.2.RELEASE")
 }
 
