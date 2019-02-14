@@ -11,6 +11,7 @@ class Mutation(private val userDao: UserDao) : GraphQLMutationResolver {
     fun registerUser(name: String, input: AuthDataInput) =
         userDao.registerUser(name, AuthDataInput(input.email, input.password))
 
+
     fun loginUser(input: AuthDataInput) = userDao.loginUser(input)
 
     fun logoutUser(email: String) = userDao.logoutUser(email)
